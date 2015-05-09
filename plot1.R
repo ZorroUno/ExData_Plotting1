@@ -30,14 +30,15 @@ data$DateTime <- strptime(
     format="%d/%m/%Y %H:%M:%S")
 # Subset data between the first and second date
 sub <- subset(data, data$Date == "1/2/2007" | data$Date == "2/2/2007")
+# Create the png file
+png("plot1.png", width = 480, height = 480, units="px")
 # Create a histogram with the subset
 hist(
     as.numeric(sub$Global_active_power),
     col="red",
     xlab="Global Active Power (kilowatts)",
     main="Global Active Power")
-# Copy the histogram to a png file
-dev.copy(png, file="plot1.png")
+# Close the device (png file)
 dev.off()
 
 
