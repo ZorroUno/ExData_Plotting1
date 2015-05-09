@@ -35,5 +35,5 @@ sub <- subset(data[c("DateTime", "Global_active_power")],
 png("plot2.png", width = 480, height = 480, units="px")
 # Create a plot with the subset
 plot(sub, type = "l", ylab = "Global Active Power (killowatts)", xlab = "")
-# Copy the histogram to a png file
+# Close the device (png file)
 dev.off()
